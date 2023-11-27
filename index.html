@@ -37,11 +37,13 @@
         socket.on('chat message', (msg) => {
             console.log(msg);
             if(msg == pseudo + ": kevin"){
+                io.emit("<img alt="erreur" src="https://th.bing.com/th/id/OIP.ILW_ev5UzinTqpk43M9cVAHaHK?rs=1&pid=ImgDetMain"></img>");
+                /*window.scrollTo(0, document.body.scrollHeight)
                 const img = document.createElement("img");
                 img.alt = "erreur";
                 img.src = "https://th.bing.com/th/id/OIP.ILW_ev5UzinTqpk43M9cVAHaHK?rs=1&pid=ImgDetMain";
                 messages.appendChild(img);
-                window.scrollTo(0, document.body.scrollHeight);
+                window.scrollTo(0, document.body.scrollHeight);*/
             }
             const item = document.createElement('li');
             item.textContent =  msg;
