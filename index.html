@@ -22,21 +22,12 @@
         const socket = io();
 
         var pseudo = prompt("saisir pseudo");
-        if (pseudo.toUpperCase() == "MATIS"){
-            pseudo = "matis (le gay)";
-        }else if(pseudo.toUpperCase() == "ENZO"){
-            pseudo = "enzo (aussi gay)";
-        }else if (pseudo.toUpperCase() == "MATHIEU"){
-            check = prompt("saisir mdp du plus bg");
-            if (check!=="secret"){
-                pseudo = "grosse merde";
-            }
-        }else if (!pseudo){
-            pseudo = "bryan boulay";
-        }else if (pseudo.toLocaleUpperCase() in ["MOLKY","QUENTIN","KENTIN","MOHAMED","MOHAMMED","MOMO"]){
-            pseudo = "beurk";
-        }
-
+        pseudo = pseudo.toUpperCase()=="MATIS" ? "matis le gros bg : pseudo; 
+        pseudo = pseudo.toUpperCase()=="ENZO" ? "enzo trop fort à fortnite : pseudo;
+        pseudo = pseudo.toUpperCase() in ["VICTOR","MOLKY"] ? "beurk" : pseudo;
+        pseudo = pseudo.toUpperCase() == "MATHIEU" ? prompt("saisir le mdp") == "squeezie" ? "Mathieu" : "imposteur" : pseudo;
+        pseudo = !pseudo ? "Bryan Boulay" : pseudo;
+        
         socket.emit('pseudo', pseudo);
 
         const messages = document.getElementById('messages');
